@@ -89,6 +89,11 @@ signals:
      */
     void tilesetsDropped(const QStringList &paths);
 
+    /**
+     * Emitted when status info changes.
+     */
+    void statusInfoChanged(const QString &string);
+
 protected:
     void changeEvent(QEvent *e);
 

@@ -384,6 +384,7 @@ void TilesetDock::updateCurrentTiles()
         if (maxX < index.column()) maxX = index.column();
         if (minY > index.row()) minY = index.row();
         if (maxY < index.row()) maxY = index.row();
+        emit statusInfoChanged(tr("Tile ID:") + QString::number(((TilesetModel*)(s->currentIndex().model()))->tileAt(s->currentIndex())->id()));
     }
 
     // Create a tile layer from the current selection

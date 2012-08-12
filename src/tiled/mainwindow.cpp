@@ -394,6 +394,9 @@ MainWindow::MainWindow(QWidget *parent, Qt::WFlags flags)
     mUi->menuView->addAction(undoDock->toggleViewAction());
     mUi->menuView->addAction(mObjectsDock->toggleViewAction());
 
+    connect(mTilesetDock, SIGNAL(statusInfoChanged(QString)),
+            this, SLOT(updateStatusInfoLabel(QString)));
+
     connect(mClipboardManager, SIGNAL(hasMapChanged()), SLOT(updateActions()));
 
     connect(mDocumentManager, SIGNAL(currentDocumentChanged(MapDocument*)),
